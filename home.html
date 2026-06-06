@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Suman Gruh Udhyog</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#fffdf8;
+}
+
+/* NAVBAR */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:#c88c64;
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+}
+
+.logo{
+color:white;
+font-size:28px;
+font-weight:bold;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-weight:600;
+transition:.3s;
+}
+
+nav a:hover{
+color:#ffd699;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+url("img/papad1.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero-content{
+animation:fadeIn 2s;
+}
+
+.hero h1{
+font-size:60px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:22px;
+margin-bottom:25px;
+}
+
+.btn{
+display:inline-block;
+background:#f39c12;
+padding:14px 30px;
+color:white;
+text-decoration:none;
+border-radius:30px;
+transition:.4s;
+}
+
+.btn:hover{
+transform:scale(1.08);
+}
+
+/* FLOATING PAPAD */
+
+.floating{
+position:absolute;
+width:150px;
+right:8%;
+bottom:10%;
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-25px);}
+100%{transform:translateY(0);}
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* SECTION TITLE */
+
+.title{
+text-align:center;
+font-size:40px;
+color:#d35400;
+margin-bottom:50px;
+}
+
+/* ABOUT */
+
+.about{
+padding:100px 10%;
+}
+
+.about p{
+font-size:18px;
+line-height:1.8;
+text-align:center;
+max-width:900px;
+margin:auto;
+}
+
+/* PRODUCTS */
+
+.products{
+padding:100px 10%;
+background:#fff4ea;
+}
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-15px);
+}
+
+.card img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.card h3{
+padding:15px;
+color:#d35400;
+}
+
+.card p{
+padding:0 15px 20px;
+}
+
+
+
+/* ORDER SECTION */
+
+.order{
+    padding:100px 10%;
+    background:#fffdf8;
+    text-align:center;
+}
+
+.order-text{
+    max-width:700px;
+    margin:20px auto 50px;
+    font-size:18px;
+    color:#555;
+}
+
+.order-box{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.order-item{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.4s;
+}
+
+.order-item:hover{
+    transform:translateY(-10px);
+}
+
+.order-item h3{
+    color:#d35400;
+    margin-bottom:10px;
+}
+
+.order-item p{
+    margin-bottom:20px;
+}
+
+.order-btn{
+    display:inline-block;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.order-btn:hover{
+    transform:scale(1.08);
+}
+
+/* WHY US */
+
+.why{
+padding:100px 10%;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.box{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+text-align:center;
+transition:.4s;
+}
+
+.box:hover{
+transform:scale(1.05);
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+padding:100px 10%;
+background:#fff4ea;
+}
+
+.review{
+background:white;
+padding:25px;
+margin-bottom:20px;
+border-left:5px solid #d35400;
+}
+
+/* CONTACT */
+
+.contact{
+padding:100px 10%;
+text-align:center;
+}
+
+input,textarea{
+width:90%;
+max-width:600px;
+padding:15px;
+margin:10px;
+border:1px solid #ccc;
+border-radius:10px;
+}
+
+button{
+background:#d35400;
+color:white;
+padding:15px 35px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+font-size:16px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+font-size:35px;
+background:#25D366;
+color:white;
+width:65px;
+height:65px;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:50%;
+text-decoration:none;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:38px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+nav{
+display:none;
+}
+
+.floating{
+width:100px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">Suman Gruh Udhyog </div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#products">Products</a>
+<a href="#diwali">Diwali Special</a>
+<a href="#order">Order</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+<h1>Traditional Handmade Papad</h1>
+<p>Crispy • Fresh • Homemade</p>
+<a href="#products" class="btn">Explore Products</a>
+</div>
+
+
+
+</section>
+
+<section class="about" id="about">
+
+<h2 class="title">About Us</h2>
+
+<p>
+We bring authentic homemade papad made with traditional recipes and premium ingredients.
+Our goal is to deliver fresh, crunchy, and delicious papad to every home while preserving the taste of Indian tradition.
+</p>
+
+</section>
+
+<section class="products" id="products">
+
+<h2 class="title">Our Products</h2>
+
+<div class="product-grid">
+
+<div class="card">
+<img src="img/urad.jpeg">
+<h3>Urad Papad</h3>
+<p>Classic crispy urad dal papad.</p>
+</div>
+
+<div class="card">
+<img src="img/lasan.jpeg">
+<h3>Lasan Papad</h3>
+<p>Healthy and delicious moong papad.</p>
+</div>
+
+<div class="card">
+<img src="img/chilli.jpeg">
+<h3>Green Chilli(Marcha) Papad</h3>
+<p>Spicy and flavorful papad.</p>
+</div>
+
+<div class="card">
+<img src="img/triranga.jpeg">
+<h3>Triranga Papad</h3>
+<p>Spicy and flavorful papad.</p>
+</div>
+
+<div class="card">
+<img src="img/moong.jpeg">
+<h3>Dhamta (Moong)Papad</h3>
+<p>Spicy and flavorful papad.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="products" id="diwali">
+
+    <h2 class="title">✨ Diwali Special Collection ✨</h2>
+
+    <div class="product-grid">
+
+        <div class="card">
+        <img src="img/chorafali.jpeg">
+        <h3>Chorafali</h3>
+        <p>Spicy and flavorful papad.</p>
+        </div>
+
+        <div class="card">
+        <img src="img/mathiya.jpeg">
+        <h3>Mathiya Papad</h3>
+        <p>Spicy and flavorful papad.</p>
+        </div>
+
+        <div class="card">
+        <img src="img/thapda.jpeg">
+        <h3>Thapada Papad</h3>
+        <p>Spicy and flavorful papad.</p>
+        </div>
+
+        <div class="card">
+        <img src="img/suvali.jpeg">
+        <h3>Suvali</h3>
+        <p>Spicy and flavorful papad.</p>
+        </div>
+
+        <div class="card">
+        <img src="img/gathiya.jpeg">
+        <h3>Gathiya</h3>
+        <p>Spicy and flavorful papad.</p>
+        </div>
+
+        <div class="card">
+        <img src="img/chakri.jpeg">
+        <h3>Chakri</h3>
+        <p>Spicy and flavorful papad.</p>
+        </div>
+
+    </div>
+
+</section>
+<section class="order" id="order">
+
+    <h2 class="title">Place Your Order</h2>
+
+    <p class="order-text">
+        Fresh, crispy and homemade papad delivered to your doorstep.
+        Contact us on WhatsApp to place your order.
+    </p>
+
+    <div class="order-box">
+
+        <div class="order-item">
+            <h3>Urad Papad</h3>
+            <p>Premium Quality</p>
+
+            <a href="https://wa.me/9825784078?text=Hello%20I%20want%20to%20order%20Urad%20Papad"
+               class="order-btn">
+               Order Now
+            </a>
+        </div>
+
+        <div class="order-item">
+            <h3>Lasan Papad</h3>
+            <p>Traditional Taste</p>
+
+            <a href="https://wa.me/9825784078?text=Hello%20I%20want%20to%20order%20Moong%20Papad"
+               class="order-btn">
+               Order Now
+            </a>
+        </div>
+
+        <div class="order-item">
+            <h3>Green Chiili (Marcha) Papad</h3>
+            <p>Spicy & Crispy</p>
+
+            <a href="https://wa.me/9825784078?text=Hello%20I%20want%20to%20order%20Masala%20Papad"
+               class="order-btn">
+               Order Now
+            </a>
+        </div>
+
+        <div class="order-item">
+            <h3>Triranga Papad</h3>
+            <p>Traditional Taste</p>
+
+            <a href="https://wa.me/9825784078?text=Hello%20I%20want%20to%20order%20Moong%20Papad"
+               class="order-btn">
+               Order Now
+            </a>
+        </div>
+
+        <div class="order-item">
+            <h3>Dhamta(Moong) Papad</h3>
+            <p>Traditional Taste</p>
+
+            <a href="https://wa.me/9825784078?text=Hello%20I%20want%20to%20order%20Moong%20Papad"
+               class="order-btn">
+               Order Now
+            </a>
+        </div>
+
+        <div class="order-item">
+            <h3>Chorafali</h3>
+            <p>Traditional Taste</p>
+
+            <a href="https://wa.me/9825784078?text=Hello%20I%20want%20to%20order%20Moong%20Papad"
+               class="order-btn">
+               Order Now
+            </a>
+        </div>
+
+        <div class="order-item">
+            <h3>Mathiya</h3>
+            <p>Traditional Taste</p>
+
+            <a href="https://wa.me/9825784078?text=Hello%20I%20want%20to%20order%20Moong%20Papad"
+               class="order-btn">
+               Order Now
+            </a>
+        </div>
+
+        <div class="order-item">
+            <h3>Thapada</h3>
+            <p>Traditional Taste</p>
+
+            <a href="https://wa.me/9825784078?text=Hello%20I%20want%20to%20order%20Moong%20Papad"
+               class="order-btn">
+               Order Now
+            </a>
+        </div>
+
+        <div class="order-item">
+            <h3>Suvali</h3>
+            <p>Traditional Taste</p>
+
+            <a href="https://wa.me/9825784078?text=Hello%20I%20want%20to%20order%20Moong%20Papad"
+               class="order-btn">
+               Order Now
+            </a>
+        </div>
+
+        <div class="order-item">
+            <h3>Gathiya</h3>
+            <p>Traditional Taste</p>
+
+            <a href="https://wa.me/9825784078?text=Hello%20I%20want%20to%20order%20Moong%20Papad"
+               class="order-btn">
+               Order Now
+            </a>
+        </div>
+
+        <div class="order-item">
+            <h3>Chakri</h3>
+            <p>Traditional Taste</p>
+
+            <a href="https://wa.me/9825784078?text=Hello%20I%20want%20to%20order%20Moong%20Papad"
+               class="order-btn">
+               Order Now
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="why">
+
+<h2 class="title">Why Choose Us</h2>
+
+<div class="features">
+
+<div class="box">
+<h3>100% Handmade</h3>
+<p>Traditional homemade process.</p>
+</div>
+
+<div class="box">
+<h3>Premium Ingredients</h3>
+<p>Fresh and quality ingredients.</p>
+</div>
+
+<div class="box">
+<h3>Fast Delivery</h3>
+<p>Safe packaging and quick shipping.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="testimonials">
+
+<h2 class="title">Customer Reviews</h2>
+
+<div class="review">
+★★★★★ Amazing taste and freshness.
+</div>
+
+<div class="review">
+★★★★★ Best homemade papad I've ever tried.
+</div>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2 class="title">Contact Us</h2>
+
+<form>
+<input type="text" placeholder="Your Name">
+<br>
+<input type="email" placeholder="Your Email">
+<br>
+<textarea rows="5" placeholder="Message"></textarea>
+<br>
+<button type="submit">Send Message</button>
+</form>
+
+</section>
+
+<a href="https://wa.me/9825784078" class="whatsapp">☎</a>
+
+<footer>
+© 2026 Suman Gruh Udhyog Papad | All Rights Reserved
+</footer>
+
+</body>
+</html>
